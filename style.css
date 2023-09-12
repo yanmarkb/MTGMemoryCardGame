@@ -1,0 +1,206 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #game-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 500px;
+    margin-top: 20px;
+  }
+  
+  .card {
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    transform-style: preserve-3d;
+  }
+  
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #timer,
+  #score {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+   */
+   *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+   }
+   /* #game div {
+    border: 1px solid black;
+    width: 15%;
+    height: 200px;
+    margin: 10px;
+    display: inline-block;
+  } */
+
+  button{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: brown;
+    border-radius: 5px;
+    box-shadow: black;
+    outline: none;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    z-index: 4;
+    top: 45%;
+    left: 31.5%;
+  }
+  #restart{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    font-size: 15px;
+    font-weight: bolder;
+    background-color: brown;
+    border-radius: 5px;
+    box-shadow: black;
+    outline: none;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    z-index: 2;
+    top: -60%;
+    left: -2%;
+  }
+  #restart:hover{
+    background-color: red;
+    transition: .2s ease-in;
+  }
+
+button:hover{
+    background-color: red;
+    transition: .2s ease-in;
+    
+}
+
+  body{
+    height: 100vh;
+    display: flex;
+    background: url(https://wallpaperset.com/w/full/8/2/9/483501.jpg);
+  }
+
+  .memory-game{
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid lime;
+    perspective: 1000px;
+    background-color: lightgray;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    z-index: 3;
+  }
+  #game-board{
+       width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid lime;
+    perspective: 1000px;
+    background-color: lightgray;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    z-index: 3;
+  }
+
+  .stats-container{
+    position: absolute;
+    height: 50px;
+    width: 175px;
+    flex-wrap: wrap;
+    border: 2px solid aqua;
+    perspective: 500px;
+    background-color: brown;
+    border-radius: 5px;
+    box-shadow: 0.3em 0.3em 0.5em black;
+    top: 84.5%;
+    left: 102%;
+  }
+
+  .game{
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    position: relative;
+    margin: 5px;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+  }
+
+.game:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.game.flip{
+    transform: rotateY(180deg);
+}
+
+  .front-face, .back-face{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    position: absolute;
+    border: 2px deeppink;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+    box-shadow: 0 0.3em 0.8em black;
+  }
+  .front-face{
+    transform: rotateY(180deg);
+  }
+  img{
+    width: 100px;
+    border-radius: 100px;
+  }
+  .hide{
+    display: none;
+  }
+  .unhide{
+    display: contents;
+  }
